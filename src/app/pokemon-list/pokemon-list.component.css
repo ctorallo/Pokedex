@@ -1,6 +1,25 @@
 .list{
-    /* background-color: #0059b3; */
-    border:1px solid black;
-    margin-bottom: 5px;
-    /* color: white; */
+    cursor: pointer;
+    position: relative;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: auto;
+    border-radius: 4px;
+    width: 50%;
+    list-style-type: none;
+    border-radius: 25px;
+    padding-left: 20px;
+
+    user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+}
+
+ul{
+    /* overflow:hidden; 
+    overflow-y:scroll;
+    height:50%; */
 }

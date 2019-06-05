@@ -1,6 +1,8 @@
 <div>
-  <li *ngFor='let pokemons of pokemons$'>
-    <div>{{pokemons.name}}</div>
-    <div>{{pokemons.url}}</div>
-    <app-pokemon-img [pokemonUrl] = 'pokemons.url'></app-pokemon-img>
-  </li>
+  <ul>
+    <li class="list" *ngFor='let pokemons of pokemons$'>
+      <div>{{pokemons.name | uppercase}}</div>
+      <app-pokemon-img [pokemonUrl] = 'pokemons.url'></app-pokemon-img>
+    </li>
+  </ul>
+</div>
