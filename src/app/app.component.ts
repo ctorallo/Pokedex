@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonModel, Results } from './pokemonModel';
+import { pokemonQuery, Results } from './pokemonModelQuery';
 import { PokeapiService } from './pokeapi.service';
 import { HttpClient } from '@angular/common/http';
 @Component({

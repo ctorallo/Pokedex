@@ -1,7 +1,6 @@
 <div>
-  <li class='list' *ngFor='let pokemons of pokemons$'>
+  <li *ngFor='let pokemons of pokemons$'>
     <div>{{pokemons.name}}</div>
     <div>{{pokemons.url}}</div>
-    <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'>
+    <app-pokemon-img [pokemonUrl] = 'pokemons.url'></app-pokemon-img>
   </li>
-</div>

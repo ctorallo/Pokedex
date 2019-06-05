@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonModel, Results } from '../pokemonModel';
+import { Results } from '../pokemonModelQuery';
 import { PokeapiService } from '../pokeapi.service';
 
 @Component({
@@ -10,11 +10,13 @@ import { PokeapiService } from '../pokeapi.service';
 export class PokemonListComponent implements OnInit {
 
   pokemons$: Results[];
-
+  
   constructor(private pService: PokeapiService){}
+  
 
   ngOnInit(){
     this.pService.getPokemonList()
       .subscribe(data => this.pokemons$ = data.results);
   }
+
 }

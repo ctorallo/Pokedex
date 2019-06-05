@@ -1,4 +1,4 @@
-export class PokemonModel{
+export class pokemonQuery{
     count : number;
     next : string;
     previous : string;
@@ -9,3 +9,4 @@ export class Results{
     name : string;
     url : string;
 }
+
