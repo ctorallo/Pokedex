@@ -1,0 +1,7 @@
+.pokemonName{
+    user-select: text;
+        -moz-user-select: text;
+        -khtml-user-select: text;
+        -webkit-user-select: text;
+        -o-user-select: text;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { spriteUrls } from 'src/app/infoQueryModel';
-import { PokeapiService } from '../../pokeapi.service';
+import { PokeapiService } from '../../../pokeapi.service';
 
 @Component({
   selector: 'app-pokemon-img',

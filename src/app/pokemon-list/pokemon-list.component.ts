@@ -8,7 +8,7 @@ import { PokeapiService } from '../pokeapi.service';
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-
+  
   pokemons$: Results[];
   
   constructor(private pService: PokeapiService){}
