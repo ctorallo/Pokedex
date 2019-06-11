@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Results } from 'src/app/pokemonModelQuery';
 import { PokeapiService } from 'src/app/pokeapi.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-box-result',
@@ -12,10 +13,12 @@ export class BoxResultComponent implements OnInit {
   @Input('pokemonName') pokemonName : string;
 
   
-  constructor(){}
+  constructor(private router: Router){}
   
+  goto(path) {
+    this.router.navigate([path]);
+  }
+
   ngOnInit(){
-    console.log(this.pokemonUrl);
-    console.log(this.pokemonName);
   }
 }

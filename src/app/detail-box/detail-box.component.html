@@ -1,0 +1,15 @@
+<div class="detailBox">
+        detail-box works!
+  <div>
+      <ng-container *ngIf="pokemonInfo$">
+          <img  [src] = 'pokemonInfo$.front_default' />
+      </ng-container>
+
+    <a [routerLink] ="['']">RETURN</a>
+    <a [routerLink] ="['/','venusaur']">NEXT</a>
+    
+    <button (click)="goto('venusaur')">GO TO VENUSAUR</button>
+  </div>
+</div>
+
+

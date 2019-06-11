@@ -5,3 +5,6 @@
         -webkit-user-select: text;
         -o-user-select: text;
 }
+.container{
+    text-align: center;
+}

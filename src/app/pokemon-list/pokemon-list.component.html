@@ -1,8 +1,7 @@
-<div>
-  <ul>
-    <li class="list" *ngFor='let pokemons of pokemons$'>
-      <app-box-result [pokemonUrl] = 'pokemons.url' 
-                      [pokemonName] = 'pokemons.name'></app-box-result>
-    </li>
-  </ul>
+<div class="cardList">
+   <ng-container class="list" *ngFor='let pokemons of pokemons$'>
+      <app-box-result class="cardListItem"
+      [pokemonUrl] = 'pokemons.url' 
+      [pokemonName] = 'pokemons.name'></app-box-result>
+    </ng-container>
 </div>

@@ -18,10 +18,10 @@ export class PokemonImgComponent implements OnInit {
   ngOnInit(){
     this.pService.getPokemonInfo(this.pokemonUrl)
       .subscribe(data => {
-        console.log(data.sprites.front_default);
+        // console.log(data.sprites.front_default);
         this.pokemonSprites$ = data.sprites;
       })
-      console.log(this.pokemonUrl);
+      // console.log(this.pokemonUrl);
 
   }
     

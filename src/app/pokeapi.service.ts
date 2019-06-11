@@ -19,5 +19,9 @@ export class PokeapiService {
   getPokemonInfo(url : string){
     return this.http.get<pokemonInfo>(url);
   }
+
+  getPokemonImage(image : string){
+    return this.http.get<pokemonInfo>(this.pokeApiUrl + image);
+  }
 }
 

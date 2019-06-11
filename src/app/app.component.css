@@ -1,3 +1,12 @@
 h1{
     text-align: center;
 }
+.mains{
+    display: flex;
+    flex-direction: row;
+    -ms-flex-item-align: center;
+}
+
+.componentBorder{
+    border: 4px solid #000000;
+}
