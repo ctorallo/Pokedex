@@ -3,5 +3,22 @@
     text-align: center;
 }
 
-p{
+.element{
+    border: 1px solid #000000;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    width: 80px;
+    border: 2px solid #a4a4a4;
+    line-height: 28px;
+    max-width: 110px;
+    font-family: "Flexo-Medium",arial,sans-serif;
+
 }
+
+.images{
+    /* width: 120px; */
+}
+
+ 

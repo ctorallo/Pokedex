@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Results } from 'src/app/pokemonModelQuery';
+import { Results } from 'src/app/models/pageListModel';
 import { PokeapiService } from 'src/app/pokeapi.service';
 import { Router } from '@angular/router';
 
@@ -20,5 +20,6 @@ export class BoxResultComponent implements OnInit {
   }
 
   ngOnInit(){
+    
   }
 }

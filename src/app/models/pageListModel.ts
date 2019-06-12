@@ -1,4 +1,4 @@
-export class pokemonQuery{
+export class PokemonQuery{
     count : number;
     next : string;
     previous : string;

@@ -1,18 +1,25 @@
-<div class="detailBox">
-        detail-box works!
+<div class="detailBox" *ngIf="pokemonInfo$">
+  <ng-container *ngIf="pokemonInfoSprites$">
+    <img class="images" [src]='pokemonInfoSprites$.front_default' />
+  </ng-container>
   <div>
-      <ng-container *ngIf="pokemonInfo$">
-          <img  [src] = 'pokemonInfo$.front_default' />
-      </ng-container>
-
-    <!-- <a [routerLink] ="['']">RETURN</a> -->
+    <ng-container *ngFor="let types of typesArray$.reverse()">
+      <span class="element {{types.type.name}}">{{types.type.name | uppercase}}</span>
+    </ng-container>
+  </div>
+  <div>
+    HEIGHT : {{pokemonInfo$.height}}
+  </div>
+  <div>
+    WEIGHT : {{pokemonInfo$.weight}}
+  </div>
+  <div>
+    {{pokedexDesc}}
+  </div>
+  <div>
     <button (click)="goback()">RETURN</button>
-    
-    <p>
-      <!-- <a [routerLink] ="['../','venusaur']" (click)="refreshInfo()">VENUSAUR</a> -->
-      <button (click)="refreshInfo()">VENUSAUR</button>
-    </p>
+  </div>
+  <div>
+    <button (click)="fillUpDetails('venusaur')">VENUSAUR</button>
   </div>
 </div>
-
-

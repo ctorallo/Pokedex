@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { spriteUrls } from 'src/app/infoQueryModel';
+import { SpriteUrls } from 'src/app/models/detailModel';
 import { PokeapiService } from '../../../pokeapi.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { PokeapiService } from '../../../pokeapi.service';
 export class PokemonImgComponent implements OnInit {
   @Input('pokemonUrl') pokemonUrl : string;
 
-  pokemonSprites$: spriteUrls;
+  pokemonSprites$: SpriteUrls;
 
   constructor(private pService: PokeapiService){}
   

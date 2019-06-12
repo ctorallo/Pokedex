@@ -1,5 +1,7 @@
-export class pokemonInfo{
-    abilities : string;
+export class PokemonInfo{
+  data: any;
+  [x: string]: any;
+    abilities : AbilityInfo[];
     forms : string;
     game_indices : string;
     height : string;
@@ -9,18 +11,34 @@ export class pokemonInfo{
     location_area_encounters : string;
     moves : string;
     species : string;
-    sprites : spriteUrls;
+    sprites : SpriteUrls;
     stats : string;
-    types : string;
+    types : TypesArray[];
     weight : number;
 }
 
-export class abilityList{
-    ability : string;
+export class TypesArray{
+    slot : number;
+    type : PokemonType;
+}
+
+export class PokemonType{
+    name : string;
+    url : string;
+}
+
+export class AbilityInfo{
+    ability : Ability;
     is_hidden : boolean;
     slot : number;
 }
-export class spriteUrls{
+
+export class Ability{
+    name : string;
+    url : string;
+}
+
+export class SpriteUrls{
     back_default : string;
     back_female : string;
     back_shiny : string;
