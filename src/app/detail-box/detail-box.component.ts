@@ -27,7 +27,17 @@ export class DetailBoxComponent implements OnInit {
     goto(path) {
       this.router.navigate([path]);
     }
-  
+    
+    goback(){
+      this.router.navigate(["../"]);
+    }
+    refreshInfo(){
+
+      console.log("refreshInfo CLICKED");
+      this.pService.getPokemonImage('venusaur')
+      .subscribe(data => this.pokemonInfo$ = data.sprites);
+
+    }
 
   ngOnInit() {
     this.detailInfo = this.route.snapshot.paramMap.get('details');
@@ -35,7 +45,7 @@ export class DetailBoxComponent implements OnInit {
     console.log("Detail Info: " + this.detailInfo);
 
     this.pService.getPokemonImage(this.detailInfo)
-      .subscribe(data => this.pokemonInfo$ = data.sprites);
+      .subscribe(data => this.pokemonInfo$ = data.sprites).unsubscribe;
   }
 
 }

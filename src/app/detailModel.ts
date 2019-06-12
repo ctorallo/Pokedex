@@ -1,4 +1,4 @@
-export interface pokemonInfo{
+export class pokemonInfo{
     abilities : string;
     forms : string;
     game_indices : string;
@@ -15,6 +15,11 @@ export interface pokemonInfo{
     weight : number;
 }
 
+export class abilityList{
+    ability : string;
+    is_hidden : boolean;
+    slot : number;
+}
 export class spriteUrls{
     back_default : string;
     back_female : string;

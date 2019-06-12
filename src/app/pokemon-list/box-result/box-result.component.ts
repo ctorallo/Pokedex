@@ -16,7 +16,7 @@ export class BoxResultComponent implements OnInit {
   constructor(private router: Router){}
   
   goto(path) {
-    this.router.navigate([path]);
+    this.router.navigate(["./list/" + path]);
   }
 
   ngOnInit(){

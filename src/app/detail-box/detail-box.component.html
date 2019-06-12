@@ -5,10 +5,13 @@
           <img  [src] = 'pokemonInfo$.front_default' />
       </ng-container>
 
-    <a [routerLink] ="['']">RETURN</a>
-    <!-- <a [routerLink] ="['details','venusaur']">NEXT</a> -->
-    <a [routerLink] ="['.././','venusaur']">VENUSAUR</a>
-    <!-- <button (click)="goto('list/venusaur')">GO TO VENUSAUR</button> -->
+    <!-- <a [routerLink] ="['']">RETURN</a> -->
+    <button (click)="goback()">RETURN</button>
+    
+    <p>
+      <!-- <a [routerLink] ="['../','venusaur']" (click)="refreshInfo()">VENUSAUR</a> -->
+      <button (click)="refreshInfo()">VENUSAUR</button>
+    </p>
   </div>
 </div>
 
