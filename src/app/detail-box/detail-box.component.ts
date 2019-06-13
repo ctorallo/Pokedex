@@ -15,15 +15,15 @@ export class DetailBoxComponent implements OnInit {
   pokemonInfo$: PokemonInfo;
   typesArray$: TypesArray[];
   pokedexDesc : string;
-
+  venusaurTest = 'venusaur';
   constructor(
     private route: ActivatedRoute,
     private pService: PokeapiService,
     private router: Router) {
 
-    this.router.events.subscribe((e: any) => {
-      console.log('Router event:', e);
-    });
+    // this.router.events.subscribe((e: any) => {
+    //   console.log('Router event:', e);
+    // });
 
   }
 
