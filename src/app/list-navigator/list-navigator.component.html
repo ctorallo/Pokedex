@@ -1,4 +1,14 @@
 <div class="list-navigator">
-  <input type="text" placeholder="Search">
-  <input type="text" placeholder="Limit">
+  <span>
+    <input placeholder="Search">
+  </span>
+
+  <span>
+    <div class="label">Result Limit:</div>
+    <div>
+      <input [(ngModel)]="limiter" placeholder="Limit">
+      <button (click)="setOutputLimit()">GO</button>
+    </div>
+  </span>
+
 </div>

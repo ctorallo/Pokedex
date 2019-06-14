@@ -5,7 +5,10 @@
   </a> -->
   <a (click)="goto(pokemonName)">
     <div class="pokemonName">{{pokemonName | uppercase}}</div>
-    <app-pokemon-img [pokemonUrl]='pokemonName'></app-pokemon-img>
+    <ng-container *ngIf='pokemonSprites$'>
+      <img  [src] = 'pokemonSprites$.front_default' />
+    </ng-container>
+    <!-- <app-pokemon-img [pokemonUrl]='pokemonName'></app-pokemon-img> -->
     <div>
       <ng-container *ngFor='let types of typesArray$'>
         <span class="element {{types.type.name}}">{{types.type.name}}</span>

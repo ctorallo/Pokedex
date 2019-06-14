@@ -10,21 +10,37 @@ import { Species } from './models/pokemon-species-model';
 export class PokeapiService {
   _pokeApiUrl = 'https://pokeapi.co/api/v2/pokemon/';
   _pokemonSpeciesUrl = 'https://pokeapi.co/api/v2/pokemon-species/';
-  pokemonInfoUrl : string;
+  offset = 0;
+  limit = 20;
+  _pokeApiOffsetAndLimitUrl = 'https://pokeapi.co/api/v2/pokemon/';
+constructor(private http: HttpClient) { }
 
-  constructor(private http:HttpClient) { }
+private constructURL(){
+  this._pokeApiOffsetAndLimitUrl = 'https://pokeapi.co/api/v2/pokemon/?offset=' + this.offset + '&limit=' + this.limit;
+}
 
-  getPokemonList(){
-    return this.http.get<PokemonQuery>(this._pokeApiUrl);
-  }
+setPageLimit(limit : number){
+  this.limit = limit;
+  this.constructURL();
+}
 
-  getPokemonInfo(name : string){
-    return this.http.get<PokemonInfo>(this._pokeApiUrl + name);
-  }
+setOffset(offset : number){
+  this.offset = offset;
+  this.constructURL();
+}
 
-  getPokedexDesc(name : string){
-    console.log("getPokedexDesc value: " + this._pokemonSpeciesUrl + name)
-    return this.http.get<Species>(this._pokemonSpeciesUrl + name);
-  }
+getPokemonList(){
+  return this.http.get<PokemonQuery>(this._pokeApiOffsetAndLimitUrl);
+}
+
+getPokemonInfo(name : string){
+  return this.http.get<PokemonInfo>(this._pokeApiUrl + name);
+}
+
+getPokedexDesc(name : string){
+  console.log("getPokedexDesc value: " + this._pokemonSpeciesUrl + name)
+  return this.http.get<Species>(this._pokemonSpeciesUrl + name);
+}
+
 }
 

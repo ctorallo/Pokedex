@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Results } from 'src/app/models/pageListModel';
 import { PokeapiService } from 'src/app/pokeapi.service';
 import { Router } from '@angular/router';
+import { SpriteUrls } from 'src/app/models/detailModel';
 
 @Component({
   selector: 'app-box-result',
@@ -12,14 +13,20 @@ export class BoxResultComponent implements OnInit {
   @Input('pokemonUrl') pokemonUrl : string;
   @Input('pokemonName') pokemonName : string;
 
-  
-  constructor(private router: Router){}
+  pokemonSprites$ : SpriteUrls;
+
+  constructor(private router: Router,private pService: PokeapiService){}
   
   goto(path) {
     this.router.navigate(["./list/" + path]);
   }
 
   ngOnInit(){
-    
+
+    this.pService.getPokemonInfo(this.pokemonName)
+      .subscribe(data => {
+        // console.log(data.sprites.front_default);
+        this.pokemonSprites$ = data.sprites;
+      })
   }
 }

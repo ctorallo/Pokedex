@@ -1,15 +1,11 @@
 .list-navigator{
     text-align: center;
-    font-size: 50px;
+    /* font-size: 50px; */
     border: 4px solid #000000;
-    color: red;
+    /* color: red; */
     display: inline-block;
 }
 
-.test{
-    text-align: center;
-    font-size: 50px;
-    border: 4px solid #000000;
-    color: red;
-    display: inline-block;
+.label{
+    text-align: left;
 }

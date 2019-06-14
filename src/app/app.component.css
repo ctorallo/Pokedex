@@ -8,5 +8,9 @@ h1{
 }
 
 .componentBorder{
-    border: 4px solid #000000;
+    border: 4px solid #ffffff;
+}
+
+.list-navigator{
+    margin-left: 15px;
 }
