@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Results } from 'src/app/models/pageListModel';
 import { PokeapiService } from 'src/app/pokeapi.service';
 import { Router } from '@angular/router';
-import { SpriteUrls } from 'src/app/models/detailModel';
+import { SpriteUrls, TypesArray } from 'src/app/models/detailModel';
 
 @Component({
   selector: 'app-box-result',
@@ -14,7 +14,8 @@ export class BoxResultComponent implements OnInit {
   @Input('pokemonName') pokemonName : string;
 
   pokemonSprites$ : SpriteUrls;
-
+  typesArray$: TypesArray[];
+  
   constructor(private router: Router,private pService: PokeapiService){}
   
   goto(path) {
@@ -27,6 +28,8 @@ export class BoxResultComponent implements OnInit {
       .subscribe(data => {
         // console.log(data.sprites.front_default);
         this.pokemonSprites$ = data.sprites;
+        this.typesArray$ = data.types;
+        this.typesArray$.reverse;
       })
   }
 }

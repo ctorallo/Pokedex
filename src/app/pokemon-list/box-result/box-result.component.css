@@ -1,10 +1,43 @@
-.pokemonName{
+.pokemonName {
+    margin-top: 10px;
     user-select: text;
-        -moz-user-select: text;
-        -khtml-user-select: text;
-        -webkit-user-select: text;
-        -o-user-select: text;
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -o-user-select: text;
+    font-weight: bold;
 }
-.container{
+
+.container {
     text-align: center;
+    border-radius: 200px;
+}
+
+.element {
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 80px;
+    line-height: 28px;
+    max-width: 110px;
+    font-family: "Flexo-Medium", arial, sans-serif;
+    /* border: 2px solid #a4a4a4; */
+}
+
+.horizontalDiv {
+    display: flex;
+    /* display: inline-block; */
+}
+
+.lines {
+    /* border: 2px solid #a4a4a4; */
+    width: 50%;
+}
+
+.images {
+    /* border: 1px solid #000000; */
+    margin-bottom: 10px;
 }
