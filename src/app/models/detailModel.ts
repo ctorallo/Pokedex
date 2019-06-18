@@ -1,6 +1,4 @@
 export class PokemonInfo{
-  data: any;
-  [x: string]: any;
     abilities : AbilityInfo[];
     forms : string;
     game_indices : string;
@@ -9,14 +7,22 @@ export class PokemonInfo{
     id  : number;
     is_default : boolean;
     location_area_encounters : string;
-    moves : string;
+    moves : MoveInfo[];
     species : string;
     sprites : SpriteUrls;
-    stats : string;
+    stats : Stats[];
     types : TypesArray[];
     weight : number;
 }
 
+export class Stats{
+    base_stat : number;
+    stat : StatName;
+}
+
+export class StatName{
+    name: string;
+}
 export class TypesArray{
     slot : number;
     type : PokemonType;
@@ -47,4 +53,13 @@ export class SpriteUrls{
     front_female : string;
     front_shiny : string;
     front_shiny_female : string;  
+}
+
+export class MoveInfo{
+    move : MoveName;
+}
+
+export class MoveName{
+    name : string;
+    url : string;
 }

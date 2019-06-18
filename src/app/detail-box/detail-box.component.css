@@ -1,24 +1,104 @@
 .detailBox{
-    border: 4px solid #000000;
+    border: 4px solid #cc5656;
+    border-radius: 15px;
     text-align: center;
+    margin: auto;
+    width: 60%;
+
 }
 
 .element{
     border: 1px solid #000000;
     text-align: center;
     border-radius: 5px;
-    display: inline-block;
-    margin-right: 5px;
+    margin: 5px;
     width: 80px;
     border: 2px solid #a4a4a4;
     line-height: 28px;
     max-width: 110px;
     font-family: "Flexo-Medium",arial,sans-serif;
+}
+
+
+div{
+    /* border: 1px solid #000000; */
+}
+
+.elementDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageDiv{
+    /* border: 4px solid #cc5656; */
+    border-bottom: 4px solid #cc5656;
+    border-right: 4px solid #cc5656;
+    width: 40%;
+    display: flex;
+  flex-direction: column;
 
 }
 
-.images{
-    /* width: 120px; */
+.infoDiv{
+    width: 60%;
 }
 
- 
+.flexer{
+    display: flex;
+}
+
+.imageDiv1{
+    background-color: #cc5656;
+    padding-bottom: 4px;
+    
+}
+
+
+.imageDiv2{
+    /* height: 100%; */
+}
+
+.center{
+    margin:auto;
+}
+
+.leftButton{
+    text-align: left;
+
+}
+
+.rightButton{
+text-align: right;
+}
+
+.imageDiv button{
+    height: 40px;
+    widows: 50px;
+}
+
+.description{
+    border-bottom: 4px solid #cc5656;
+}
+.stats{
+    border-top: 4px solid #cc5656;
+}
+.stats div{
+    /* text-align: center; */
+    /* display: inline-block; */
+    border-bottom: 4px solid #cc5656;
+    display: flex; 
+    /* display: inline-flex; */
+    vertical-align: middle;
+    /* align-items: center;  */
+    /* justify-content: center; */
+}
+
+.stats span{
+    width: 100%;
+    height: 40px;   
+    background-color: #cc5656;
+    border-bottom: 1px solid #000000;
+    vertical-align: middle;
+}

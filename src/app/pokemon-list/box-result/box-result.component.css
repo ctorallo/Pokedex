@@ -18,7 +18,8 @@
     border-radius: 5px;
     display: inline-block;
     margin-right: 5px;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     margin-left: 5px;
     width: 80px;
     line-height: 28px;
@@ -35,9 +36,11 @@
 .lines {
     /* border: 2px solid #a4a4a4; */
     width: 50%;
+    margin: auto;
 }
 
 .images {
     /* border: 1px solid #000000; */
     margin-bottom: 10px;
+    margin: auto;
 }

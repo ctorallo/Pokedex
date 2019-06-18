@@ -1,25 +1,70 @@
 <div class="detailBox" *ngIf="pokemonInfo$">
-  <ng-container *ngIf="pokemonInfoSprites$">
-    <img class="images" [src]='pokemonInfoSprites$.front_default' />
-  </ng-container>
-  <div>
-    <ng-container *ngFor="let types of typesArray$.reverse()">
-      <span class="element {{types.type.name}}">{{types.type.name | uppercase}}</span>
-    </ng-container>
+
+  <div class="flexer">
+
+    <div class="imageDiv">
+
+      <div class="imageDiv1">
+        <button>&#171;</button>
+        <button class="leftButton">Normal</button>
+        <button class="rightButton">Shiny</button>
+        <button>&#187;</button>
+      </div>
+
+      <div class="imageDiv2">
+
+        <ng-container *ngIf="pokemonInfoSprites$">
+          <img class="center" [src]='pokemonInfoSprites$.front_default' />
+        </ng-container>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="infoDiv">
+      <div class="elementDiv">
+        <ng-container *ngFor="let types of typesArray$.reverse()">
+          <div class="element {{types.type.name}}">{{types.type.name | uppercase}}</div>
+        </ng-container>
+      </div>
+
+      <div>
+        HEIGHT : {{pokemonInfo$.height}}
+      </div>
+
+      <div>
+        WEIGHT : {{pokemonInfo$.weight}}
+      </div>
+
+      <div class="stats">
+            <ng-container *ngFor="let statInfo of pokemonInfo$.stats">
+              <div>
+                  <span>
+                      {{statInfo.stat.name | uppercase}}
+                  </span>
+                  <span>
+                      {{statInfo.base_stat}}
+                  </span>
+              </div>
+                
+            </ng-container>
+      </div>
+
+    </div>
+
   </div>
-  <div>
-    HEIGHT : {{pokemonInfo$.height}}
-  </div>
-  <div>
-    WEIGHT : {{pokemonInfo$.weight}}
-  </div>
-  <div>
+
+  <div class="description">
     {{pokedexDesc}}
   </div>
+
   <div>
     <button (click)="goback()">RETURN</button>
   </div>
   <div>
     <button (click)="goto('../list/' + venusaurTest)">{{venusaurTest | uppercase}}</button>
   </div>
+
 </div>
