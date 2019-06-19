@@ -23,6 +23,7 @@ export class Stats{
 export class StatName{
     name: string;
 }
+
 export class TypesArray{
     slot : number;
     type : PokemonType;

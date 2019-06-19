@@ -20,6 +20,11 @@ private constructURL(){
 }
 
 setPageLimit(limit : number){
+  
+  if(limit > 807){
+    limit = 807;
+  }
+
   this.limit = limit;
   this.constructURL();
 }

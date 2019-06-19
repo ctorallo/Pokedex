@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'pokemonfont';
+    src: url('/assets/Fonts/PokemonCustomFont.ttf') format("truetype");
+}
+
 body{
     /* background-image: url(http://getwallpapers.com/wallpaper/full/0/8/2/53557.jpg) */
+
+        margin: 0;
+        padding: 0;
 }
+
 
 /* pokemon types color coding */
 

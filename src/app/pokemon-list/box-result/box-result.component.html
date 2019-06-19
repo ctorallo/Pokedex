@@ -8,7 +8,10 @@
     <div class="pokemonName">{{pokemonName | uppercase}}</div>
 
     <div class="horizontalDiv">
-
+      <div></div>
+      <span class="numbering">
+          #{{pNumber$}}
+      </span>
       <span class="lines">
         <ng-container *ngIf='pokemonSprites$'>
           <img class="images" [src]='pokemonSprites$.front_default' />

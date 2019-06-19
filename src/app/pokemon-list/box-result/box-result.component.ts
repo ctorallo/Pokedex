@@ -15,7 +15,7 @@ export class BoxResultComponent implements OnInit {
 
   pokemonSprites$ : SpriteUrls;
   typesArray$: TypesArray[];
-  
+  pNumber$: number;
   constructor(private router: Router,private pService: PokeapiService){}
   
   goto(path) {
@@ -27,6 +27,7 @@ export class BoxResultComponent implements OnInit {
     this.pService.getPokemonInfo(this.pokemonName)
       .subscribe(data => {
         // console.log(data.sprites.front_default);
+        this.pNumber$ = data.id;
         this.pokemonSprites$ = data.sprites;
         this.typesArray$ = data.types;
         this.typesArray$.reverse;

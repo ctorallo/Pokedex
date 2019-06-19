@@ -1,16 +1,18 @@
 .pokemonName {
     margin-top: 10px;
-    user-select: text;
-    -moz-user-select: text;
-    -khtml-user-select: text;
-    -webkit-user-select: text;
-    -o-user-select: text;
+    
     font-weight: bold;
 }
 
 .container {
     text-align: center;
     border-radius: 200px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 .element {
@@ -35,7 +37,7 @@
 
 .lines {
     /* border: 2px solid #a4a4a4; */
-    width: 50%;
+    width: 40%;
     margin: auto;
 }
 
@@ -43,4 +45,10 @@
     /* border: 1px solid #000000; */
     margin-bottom: 10px;
     margin: auto;
+}
+
+.numbering{
+    vertical-align: text-top;
+    width: 20%;
+    font-weight: bold;
 }

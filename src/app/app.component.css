@@ -1,20 +1,45 @@
-h1 {
-    text-align: left;
-    background-color: antiquewhite;
-}
 
-.mains {
-    display: flex;
-    flex-direction: row;
-    -ms-flex-item-align: center;
-}
 
 .componentBorder {
     border: 4px solid #ffffff;
 }
 
 .list-navigator {
-    margin-left: 15px;
-    text-align: right;
-    margin-bottom: 20px;
+    text-align: center;
+}
+
+.topPage{
+    background-color: antiquewhite;
+    position: fixed;
+    width: 100%;
+    margin-top: -13%;
+    z-index: 1000;
+    border-bottom: 4px solid #cc5656;
+    /* display: flex; */
+}
+
+.margins{
+    margin-top: 13%;
+}
+
+.headr{
+    margin: 0;
+    font-family: 'pokemonfont';
+    vertical-align: middle;
+    font-size: 2em;
+    background: #cc5656;
+    text-align: center;
+    color: #FFC420;
+    -webkit-text-stroke: 2px black;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+img{
+    vertical-align: middle;
+    
 }
