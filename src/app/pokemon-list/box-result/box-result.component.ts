@@ -30,7 +30,7 @@ export class BoxResultComponent implements OnInit {
         this.pNumber$ = data.id;
         this.pokemonSprites$ = data.sprites;
         this.typesArray$ = data.types;
-        this.typesArray$.reverse;
+        this.typesArray$.reverse();
       })
   }
 }

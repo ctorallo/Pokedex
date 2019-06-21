@@ -10,6 +10,8 @@ import { DetailBoxComponent } from './detail-box/detail-box.component';
 import { AppRoutingModule } from './app-routing-module';
 import { AppGuard } from './app.guard';
 import { FormsModule } from '@angular/forms';
+import { NoResultComponent } from './no-result/no-result.component';
+import { EvolutionChainComponent } from './detail-box/evolution-chain/evolution-chain.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     PokemonListComponent,
     BoxResultComponent,
     ListNavigatorComponent,
-    DetailBoxComponent
+    DetailBoxComponent,
+    NoResultComponent,
+    EvolutionChainComponent
   ],
   imports: [
     BrowserModule,

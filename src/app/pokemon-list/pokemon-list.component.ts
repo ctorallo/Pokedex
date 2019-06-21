@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Results } from '../models/pageListModel';
 import { PokeapiService } from '../pokeapi.service';
 import { Router } from '@angular/router';
+import { NumberValueAccessor } from '@angular/forms/src/directives';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -11,6 +12,9 @@ import { Router } from '@angular/router';
 export class PokemonListComponent implements OnInit {
 
   pokemons$: Results[];
+  totalPageNumbers : number;
+  offSet : number;
+  pages = new Array;
 
   constructor(private pService: PokeapiService,
     private router: Router) {
@@ -23,10 +27,34 @@ export class PokemonListComponent implements OnInit {
     };
   }
 
+  generatePages(){
+
+    for (let i = 1; i <= this.totalPageNumbers; i++) {
+      // this.pages.push(1);
+      console.log("i : " + i);
+      this.pages.push(i);
+    }
+    this.pages.reverse();
+  }
+
+
+  turnPage(page: number){
+    if(!(((page-1) * this.pService.limit ) == this.offSet)){
+      this.pService.setOffset((page-1) * this.pService.limit);
+      this.router.navigate(['']);
+    }
+    
+  }
 
   ngOnInit() {
     this.pService.getPokemonList()
       .subscribe(data => this.pokemons$ = data.results);
+    
+    this.totalPageNumbers = Math.ceil( 807 / this.pService.limit)  ;
+    this.offSet = this.pService.offset;
+    console.log("totalpageNumbers: " + this.totalPageNumbers);
+
+    this.generatePages();
   }
 
 }

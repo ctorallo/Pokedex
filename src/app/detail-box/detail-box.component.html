@@ -5,20 +5,34 @@
     <div class="imageDiv">
 
       <div class="imageDiv1">
-        <button>&#171;</button>
-        <button class="leftButton">Normal</button>
-        <button class="rightButton">Shiny</button>
-        <button>&#187;</button>
+        <div class="return">
+          <button (click)="goback()">RETURN</button>
+        </div>
+        <div class="poke-name">
+          <span>{{pokemonInfo$.id}}</span>
+          <span> {{pokemonInfo$.name | uppercase}}</span>
+        </div>
       </div>
 
       <div class="imageDiv2">
 
         <ng-container *ngIf="pokemonInfoSprites$">
-          <img class="center sprite" [src]='pokemonInfoSprites$.front_default' />
+          <!-- <img class="center sprite" [src]='pokemonInfoSprites$.front_default' /> -->
+          <img class="center sprite" [src]='imageSrc'>
         </ng-container>
 
       </div>
 
+      <div class="imageDiv3">
+        <div class="sprite-buttons">
+          <button (click)="changeImgGender(false)">Female</button>
+          <button (click)="changeImgGender(true)">Male</button>
+          <button (click)="changeImgToShiny(false)">Normal</button>
+          <button (click)="changeImgToShiny(true)">Shiny</button>
+          <button (click)="changeImgFacing(true)">Front</button>
+          <button (click)="changeImgFacing(false)">Back</button>
+        </div>
+      </div>
 
     </div>
 
@@ -30,41 +44,76 @@
         </ng-container>
       </div>
 
-      <div>
-        HEIGHT : {{pokemonInfo$.height}}
+      <div class="flexer">
+        <div class="stretch upper-info">
+          <div class="margin10px">HEIGHT</div>
+          <div class="bold margin10px">
+            {{pokemonInfo$.height}}
+          </div>
+          <div class="margin10px">WEIGHT</div>
+          <div class="bold margin10px">
+            {{pokemonInfo$.weight}}
+          </div>
+        </div>
+        <div class="stretch upper-info">
+          <div class="margin10px">ABILITIES</div>
+          <ng-container *ngFor="let ability of pokemonInfo$.abilities">
+            <div class="bold left-text abilities margin10px">{{ability.ability.name | uppercase}}</div>
+          </ng-container>
+        </div>
       </div>
 
-      <div>
-        WEIGHT : {{pokemonInfo$.weight}}
-      </div>
+
 
       <div class="stats">
-            <ng-container *ngFor="let statInfo of pokemonInfo$.stats">
-              <div>
-                  <span>
-                      {{statInfo.stat.name | uppercase}}
-                  </span>
-                  <span>
-                      {{statInfo.base_stat}}
-                  </span>
-              </div>
-                
-            </ng-container>
+        <ng-container *ngFor="let statInfo of pokemonInfo$.stats">
+          <div>
+            <span>
+              {{statInfo.stat.name | uppercase}}
+            </span>
+            <span>
+              {{statInfo.base_stat}}
+            </span>
+          </div>
+
+        </ng-container>
       </div>
 
     </div>
 
+    
+
   </div>
 
-  <div class="description">
-    {{pokedexDesc}}
-  </div>
+  <div class="infoDiv2">
+      <div class="description">
+        <div> DESCRIPTION:</div>
+        {{pokedexDesc.flavor_text_entries[1].flavor_text}}
+      </div>
 
-  <div>
-    <button (click)="goback()">RETURN</button>
-  </div>
-  <div>
-    <button (click)="goto('../list/' + venusaurTest)">{{venusaurTest | uppercase}}</button>
-  </div>
+      <div class="moveTitle">MOVES</div>
+
+      <div class="moves">
+        
+        <!-- <button (click)="goto('../list/' + venusaurTest)">{{venusaurTest | uppercase}}</button> -->
+        <!-- <ng-container *ngIf="pokemonEvoChain$">
+            <app-evolution-chain [pokemonEvoChainUrl]='pokedexDesc.evolution_chain.url'></app-evolution-chain>
+        </ng-container> -->
+        <ng-container *ngFor="let moves of pokemonInfo$.moves">
+            <div>{{moves.move.name |uppercase}}</div>
+        </ng-container>
+      </div>
+    </div>
+
+  <!-- <div>
+    <table>
+      <tr>
+        <th></th>
+      </tr>
+    </table>
+  </div> -->
+
+
+
 
 </div>

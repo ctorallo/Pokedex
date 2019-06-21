@@ -1,4 +1,8 @@
-<div class="pageNavigator">PAGES BITCHIS</div>
+<div class="pageNavigator">
+    <ng-container *ngFor="let page of pages">
+        <button (click)="turnPage(page)" >{{page}}</button>
+    </ng-container>
+</div>
 <div class="cardList">
     <ng-container class="list" *ngFor='let pokemons of pokemons$'>
         <app-box-result class="cardListItem" [pokemonUrl]='pokemons.url' [pokemonName]='pokemons.name'></app-box-result>
